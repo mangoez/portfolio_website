@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Po's Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="#current" class="nav__link">What I'm currently doing</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">What I can do</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Projects & Experiences</a></li>
+                    <li class="nav__item"><a href="#progress" class="nav__link">Current Adventures</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Introduction -->
+        <section class="intro" id="home">
+            <h1 class="section__title section__title--intro">
+                Heyo! I am <strong>Po Liu</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Unimelb BSci
+                <a class="social-list__link" style="text-decoration:none"
+                   href="https://www.linkedin.com/in/po-liu-science-slave/" target="black">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a style="text-decoration:none" href="img/Po.pdf" class="CV" download="Resume"><strong>CV </strong></a>
+            </p>
+            <img src="img/Profile.jpg" alt="Po holding a phat snag" class="intro__img">
+        </section>
+
+
+        <!-- About me -->
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Who I am</h2>
+           <p class="section__subtitle section__subtitle--about">Brain Computer Interface enthusiast</p>
+
+           <div class="about-me__body">
+               <p>I am a second year mechatronic systems student with an interest for medical bionics, specifically Brain Computer Interfaces
+                  and machine learning.
+                  In combination with robotics I aspire to integrate machine learning and neuroscience to improve the quality of life
+                  for people who suffer from cognitive and neuromuscular disorders. </p>
+               <p>Outside of my role in the Student Science Squad, I mentor for In2science,
+                  hoping to show students that studying STEM is an opportunity to aspire to, not an obstacle to avoid.</p>
+               <br>
+               <p><strong>UPDATE</strong><br>
+                  I have finally finished my Brain Computer Interface Controller Code! Please check it out below
+                  under "Real Time Motor Imagery Classification" (video takes a little while to load)</p>
+           </div>
+
+           <img src="img/superhack_01.jpeg" alt="Po as a mentor for SuperHack" class="about-me__img">
+        </section>
+
+
+        <!-- Current Projects -->
+        <section class="my-work" id="current">
+            <h2 class="section__title section__title--work">Check out what I'm currently doing!</h2>
+            <p class="section__subtitle section__subtitle--work">(I promise they're interesting)</p>
+
+            <div class="portfolio">
+                <!-- item 01 -->
+                <a href="BCI.html" class="portfolio__item">
+                    <img src="img/MI.png" alt="" class="portfolio__img">
+                </a>
+
+                <!--  item 01 -->
+                <a href="MUR.html" class="portfolio__item">
+                    <img src="img/MUR.png" alt="" class="portfolio__img">
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- My services -->
+        <section class="my-services" id="services">
+            <h2 class="section__title section__title--services">What I can do</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Machine Learning</h3>
+                    <p>Standford Machine Learning Course - Andrew Ng</p>
+                    <p>SciKit</p>
+                    <p>MATLAB</p>
+                </div> <!-- / service -->
+
+                <div class="service">
+                    <h3>Data Analytics</h3>
+                    <p>Numpy</p>
+                    <p>Maplotlib</p>
+                    <p>Pandas</p>
+                </div> <!-- / service -->
+
+                <div class="service">
+                    <h3>Product Development</h3>
+                    <p>Modelling experience in Fusion360 and KiCAD</p>
+                </div> <!-- / service -->
+
+                <div class="service">
+                    <h3>Robotics & Electronics</h3>
+                    <p>Experienced in arduino microcontrollers, PCB circuit design and assembly.</p>
+                </div> <!-- / service -->
+
+                <div class="service">
+                    <h3>Programming</h3>
+                    <p>MATLAB</p>
+                    <p>Python3</p>
+                    <p>C</p>
+                    <p>+ dash of web development</p>
+                </div> <!-- / service -->
+            </div> <!-- / services -->
+
+            <a href="#work" class="btn">My Work</a>
+        </section>
+
+
+        <!-- My Work -->
+        <section class="my-work" id="work">
+            <h2 class="section__title section__title--work">Projects & Experiences</h2>
+            <p class="section__subtitle section__subtitle--work">The slightly more significant stuff I did
+             - ask me about my other ones!</p>
+
+            <div class="portfolio">
+                <!-- Portfolio item 01 -->
+                <a href="bionics_institute_internship.html" class="portfolio__item">
+                    <img src="img/bionics_institute.png" alt="" class="portfolio__img">
+                </a>
+
+                <!-- Portfolio item 02 -->
+                <a href="superhack.html" class="portfolio__item">
+                    <img src="img/superhack_04.png" alt="" class="portfolio__img">
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- Current progress -->
+        <section class="my-services" id="progress">
+            <h2 class="section__title section__title--services">Current Adventures~</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Coursera</h3>
+                    <p>Deep Learning Specialisation</p>
+                </div>
+
+                <div class="service">
+                    <h3>Personal Development</h3>
+                    <p>Deep Learning</p>
+                    <p>C++ & Python with ROS</p>
+                </div>
+
+                <div class="service">
+                    <h3>MUR - Autonomous Junior</h3>
+                    <p>Part of Melbourne University Racing where I'll be working on autonomous vehicles</p>
+                    <p>AWS DeepRacer Team</p>
+                </div>
+
+                <div class="service">
+                    <h3>Project - Supervised by Dr Sam John</h3>
+                    <p>Real time Motor Imagery classification from EEG data</p>
+                </div>
+
+                <div class="service">
+                    <h3>iGEM Competition</h3>
+                    <p>The International Genetically Engineered Machine competition
+                       for synthetic biology</p>
+                </div> <!-- / service -->
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:liupochen@gmail.com" class="footer__link">liupochen@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/po-liu-science-slave/" target="black">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+        <script src="js/index.js"></script>
+
+        </script>
+
+    </body>
+</html>

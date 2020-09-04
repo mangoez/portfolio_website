@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Po's Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">What I can do</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">Projects, Qualifications & Experiences</a></li>
+                    <li class="nav__item"><a href="index.html#progress" class="nav__link">Current progress</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <section class="intro">
+            <h2 class="section__title section__title--intro">
+                Real-time Motor Imagery Classifier <strong>Project</strong>
+            </h2>
+            <p class="section__subtitle section__subtitle--intro">Supervised by Dr Sam John</p>
+            <img src="img/10_20.jpeg" alt="" class="intro__img">
+        </section>
+
+        <div class="portfolio-item-individual">
+            <p>This is a project offered to me by Dr Sam John as I was looking for a way to break into the Brain
+               Computer Interface field. He simply told me to read up, try out a Support Vector Machine on the
+               raw data and here I am!</p>
+
+            <p>This is using dataset IVc from the <a href="http://www.bbci.de/competition/iii/desc_IVc.html"> BCI competition </a> </p>
+            <p>This is also my first data science project, you will see some some machine learning and learn
+               a little neuroscience~</p>
+            <p>So to give you some motivation to read all the crap below, here is the final result.
+               I have provided the electrode C3 to illustrate the difficult EEG data I am working with. <br><br>
+               So Tadaaa</p>
+            <div style="height: 0; padding-bottom: calc(77.88% + 35px); position:relative; width: 100%;">
+                <iframe allow="autoplay; gyroscope;"
+                        allowfullscreen height="100%"
+                        referrerpolicy="strict-origin"
+                        src="https://www.kapwing.com/e/5f42f41378c0ee00153801ce"
+                        style="border:0;
+                        height:100%;
+                        left:0;
+                        overflow:hidden;
+                        position:absolute;
+                        top:0;
+                        width:100%"
+                        title="Embedded content made with Kapwing" width="100%">
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">But how?</h2>
+           <p class="section__subtitle section__subtitle--about">A little explanation</p>
+
+           <div class="about-me__body">
+               <p>Our target features are quantifying Event Related Desynchonisation (ERD)/ Synchronisation (ERS)
+                  in the EEG data. ERD is a decrease in signal power and ERS is an increase, from this we can distinguish when an individual is resting and
+                  thinking about moving their left hand or right hand. What's more is this feature
+                  is stronger during motor imagery than during movement.</p>
+
+               <p>This feature has a few interesting properties where based on left/right hand motor imagery,
+                  different areas of the will report a stronger ERD/ERS during and after the motor imagery period.
+                  We know that ERD is a contralateral event, so thinking about your right hand means
+                  ERD will occur on the left side of the motor cortex. <br><br>
+                  To be concrete: </p>
+               <p>On electrode C3 after the start of the motor imagery period you expect it to register a stronger decrease in signal
+                  power - ERD, more accurately, in a specific bandwidth, than during the left hand because electrode C3 is
+                  on the <strong>left side</strong> of the brain.
+
+               <p>However, I didn't see these patterns, in fact I saw the opposite. As frustrating as that is, this doesn't matter because we
+                  can conclude an obvious pattern exists for before, during and after the motor imagery with these patterns.
+               </p>
+               <p>To illustrate, here is a plot of the average trial for left/right hand, the motor imagery period ends at 3.5s.
+                  Focus on the dip after time is zero</p>
+               <img src="img/C3.png" alt="Electrode_C3" class="about-me__img">
+
+               <p>I still don't fully understand these features so take what I understand with a grain of salt!<p>
+
+               <p> <strong>Please contact me if you can correct/teach me more about this subject</strong></p>
+
+               <p>We can quantify these features with bandpower, so how powerful a signal is at a specific time,
+                  this allows us to view the power of an electrode in the time domain by analysing a
+                  specific window of a trial to see how strong the signal is at that point.</p>
+
+               <p>This time domain feature is ideal because the end goal is to be able to classify motor imagery
+                  and detect it in real time to control a simple game like pong.</p>
+           </div>
+
+           <img src="img/transparent.png" class="transparent">
+        </section>
+
+
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Data processing</h2>
+           <p class="section__subtitle section__subtitle--about">Rereferencing, Filtering, Relative Bandpower</p>
+
+           <div class="about-me__body">
+               <p>Firstly, I will be taking the 25 electrodes across the motor cortex from the 10/20 internation EEG system.
+                  This makes sense as that is where the best data for motor imagery will be. <br>
+                  Next, we want our data to be as clean as possible and EEG data is notorious for noise, but we
+                  can find a few ways to get it spick and span~</p><br>
+
+
+               <p> <strong>Filtering:</strong> <br>
+                  The ERD/ERS features are reported to be strongest in the mu bandwidth of around 8-12Hz
+                  so first step is to do that. For this I chose a zero-phase butterworth filter so lets have a look
+                  at it's frquency response on electrode C3 to make sure it doesn't cut our signal.</p>
+
+               <img src="img/butterworth.png" alt="freq_resp" class="about-me__img">
+
+               <p>So it looks like order 5 won't work, so let's do order 4 to maintain as much information
+                  as possible and just widen the bandpass a little to encompass the 8-12Hz range.
+                  <br>We can confirm the filter worked by plotting the power spectral density (PSD)
+                  with Welches periodogram.</p>
+
+               <img src="img/psd.png" class="transparent">
+
+               <p>Now that's all nice and dandy, but if you looked carefully the filtered C3 electrode
+                  you'll see after filtering it has high variance. This essentially means it will likely be
+                  harder to classify as it is noisier, we will confirm in the classification section.<br><br>
+                  So to illustrate the differences:</p>
+
+               <img src="img/filt_compare.png" alt="filt_compare" class="about-me__img">
+
+               <p>So now I have two datasets, one that is filtered to the mu bandwidth and one that is simply
+                  just filtered to pass signals below 50Hz, as this is the frequency of our powerlines lol. <br><br><br></p>
+
+
+               <p><strong>Rereferencing</strong> <br>
+                  This turned out to be the most important step as it made a huge difference to my data.
+                  The idea behind re-referencing is to express the voltage of the EEG channels with respect to another,
+                  this helps amplify inter-electrode patterns. </p>
+
+               <p>There are many ways to do this, such as Common Average Referencing (CAR), Cz referencing, mastoid referencing,
+                  the list goes on...I won't bore you down with all of it, but I can show you what CAR did to my signals
+                  as that is the one I chose.</p>
+
+               <img src="img/ref_compare.png" alt="filt_compare" class="about-me__img">
+
+               <p>CAR is when you subtract the average of all the
+                  electrodes from the individual electrodes, this works because what you are essentially doing is an attempt at removing <thead>
+                  noise that is common to all the electrodes</p>
+               <p> The simple rationale behind this is that we can approximate the head as a sphere and assuming
+                   that the sum of all the potentials recorded on the whole sphere due to current sources inside it is zero,
+                   this would make for a quiet or electrically neutral reference. </p>
+               <p>
+                   However, in practice, to achieve such an ideal reference one would require large number of
+                   electrodes that cover the whole head uniformly, which is not the case in EEG recordings where
+                   limited number of electrodes cover mostly the upper part of the head</p>
+               <p>But who cares, as seen above, it worked very well, we can now visually see the power difference
+                   between the left and right hand very clearly.</p>
+
+               <p>So I get to denoise my signals and help separate the data, bonus! <br><br><br> </p>
+
+               <p><strong> Relative Bandpower</strong> <br>
+                  Now at this point I could just plug that into the classifier and train it, however it is still too noisy so
+                  we need a way to downsample it without losing information and even amplify the features even more. </p>
+
+               <p>There are other ways to do this but I chose to use relative bandpower. You simply split the data into 250ms
+                  windows and calculate the bandpower for that window for each electrode and divide them by the
+                  average bandpower of the rest period prior to all the trials for each electrode (most EEG data includes this).</p>
+
+               <p>This creates one sample of data which you can label according to when the window occurs in the trial.</p>
+
+               <p>This means we now have a reference for all our samples which is the rest period, this will help the
+                  further separate the data for rest and right/left hand motor imagery by amplifying the difference between electrodes
+                  as they will all have different initial resting bandpower values.</p>
+
+               <p>We actually will slide the 250ms window over by 10ms as opposed to sampling a new window, so the next window will
+                  have 240ms overlap and 10ms of new data. This is to generate more
+                  data samples to train our classifier and is absolutely vital.</p>
+           </div>
+
+           <img src="img/transparent.png" class="transparent">
+        </section>
+
+
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Classifying!</h2>
+           <p class="section__subtitle section__subtitle--about">FINALLY, the cool part~</p>
+
+           <div class="about-me__body">
+               <p>Now, honestly deciding on a classifier wasn't very easy. Lets first consider what kind of data we have.</p>
+               <ul>
+                   <li>Very Noisy</li>
+                   <li>Complex - hard to separate</li>
+                   <li>Non-linear</li>
+                   <li>26,000 samples</li>
+               </ul>
+               <p>So immediately a good choice would be a multilayer perceptron network and increase the nodes to a large number
+                  with the correct regularisation.
+                  But we can also consider other classifiers that can deal with relationships between features well such as
+                  KNN, SVM and Decision Tree classifiers.</p>
+               <p>I only have a surface level understand of machine learning and have no 'proper' experience in tuning
+                  them and working with different types of data, based off that lets just try a bunch of them out.<br>
+                  <strong>If you have more information on choosing a classifier please contact me!</strong></p>
+
+               <p><strong>Decision Tree Classifier</strong> <br>
+                  Decision Tree's are neat because they tell you what inputs are the best predicators of
+                  the outputs so often Decision Tree's can guide you to find if there is a statistical relationship
+                  between a given input to the output and how strong that relationship is. So Decision Tree's can be used a research tool
+                  as you learn about your data so you can build other classifiers. They are also very fast.</p>
+               <img src="img/Decision Trees.png" alt="Decision Tree" class="about-me__img">
+               <p>So what we see here is that our data is fine, not great, but fine. And a pretty good indicator that rest and motor imagery are pretty similar,
+                  however, left and right motor imagery are actually reasonable separable. At least
+                  that is what I think this tells me.</p>
+              <p>But there are much better classifiers for this so I won't be using a Decision Tree. <br><br><br></p>
+
+              <p><strong>K Nearest Neighbour</strong> <br>
+                 After plotting a 'k vs error' graph I decided that 3 was the best K for this dataset.
+                 What I find interesting is that KNN is great for data that takes a spherical form,
+                 or in other words, perhaps a lot of data that may be variable but groupable.
+                 So let's try it and find out?
+                 <br> For our purposes speed may be an issue but it does have
+                 very high accuracy.</p>
+              <img src="img/KNN.png" alt="Decision Tree" class="about-me__img">
+              <p>Training this took a lot longer than the Decision Tree's but worth it I reckon. <br><br><br></p>
+
+              <p><strong>Multilayer Perceptron (MLP)</strong> <br>
+                 Now this is when it gets tricky for me, designing a neural network that is efficient but not
+                 overkill or overfitting or costing huge computing power. </p>
+              <p>Starting with the activation, since I
+                 know I will be needing a large network I went with Relu simply because it needs less computing power.
+                 It has a sparsity property where not all the neurons will activate as opposed to tanh, since the
+                 activations are quite 'dense'.</p>
+              <img src="img/NN.png" alt="MLP unfiltered data" class="about-me__img">
+              <p>This network is 2 hidden layers (300, 200). I know it's huge but hear me out, 10-Fold cross validation
+                 said it's ok and my computer ran it around a minute with 26,000 training samples.</p>
+              <p>I tuned it appropriately and I am confident it is well regularised, note that a (100, 100)
+                 structure works very well too, ~95%. However, I want a better accuracy.</p>
+
+              <p><strong>Conclusion</strong> <br>
+                 It was nice to have KNN and Decision Tree classifiers to back me up on my massive neural network.
+                 I didn't consider SVM because it was WAY too slow to train.
+                 The MLP classified faster than the KNN and improved by 1% more, I know, 1%. </p>
+              <p>So that's what I'm going with, the highest accuracy and a reasonably fast classifying time,
+                 as in the end what takes the most time is iterating through all the data. <br>
+                 <br>Also, here is why I went with unfiltered data (it is still rereferenced)</p>
+
+              <img src="img/NN_filt.png" alt="MLP filtered data" class="about-me__img">
+              <p>I find this odd but expected from the previous graphs. Such is life I guess? <br>
+                 I suspect when filtering the data we are losing too much information.</p>
+           </div>
+
+           <img src="img/transparent.png" class="transparent">
+        </section>
+
+
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Final Product</h2>
+           <p class="section__subtitle section__subtitle--about">It works everyone!</p>
+
+           <div class="about-me__body">
+               <p>So the idea is to receive the 25 electrode data where each electrode is a feature,
+                  rereference the data and downsample it to bandpower of windows. Then feed the information
+                  into a classifier at a minimum rate of 10ms. <br> <br>
+                  Now we will have some information to control a simple game, but that is coming soon in the future. <br><br>
+
+                  For now, for those that lasted the entire reading (congrats) here is the same video of it in action lol.
+                  I have smoothed the output with a Salvgol filter so that it now represents a confidence scale as opposed to
+                  just integer numbers.<br>
+                  The green box indicates the motor imagery period, the scale are confidence values:
+                  <ul>
+                      <li>1 indicates right hand motor imagery</li>
+                      <li>0 indicates rest</li>
+                      <li>-1 left hand motor imagery</li>
+
+                  </ul></p>
+                  <div style="height: 0; padding-bottom: calc(77.88% + 35px); position:relative; width: 100%;">
+                      <iframe allow="autoplay; gyroscope;"
+                              allowfullscreen height="100%"
+                              referrerpolicy="strict-origin"
+                              src="https://www.kapwing.com/e/5f42f41378c0ee00153801ce"
+                              style="border:0;
+                              height:100%;
+                              left:0;
+                              overflow:hidden;
+                              position:absolute;
+                              top:0;
+                              width:100%"
+                              title="Embedded content made with Kapwing" width="100%">
+                      </iframe>
+                  </div>
+           </div>
+
+           <img src="img/transparent.png" class="transparent">
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:liupochen@gmail.com" class="footer__link">liupochen@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/po-liu-science-slave/" target="black">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+
+        <script src="js/index.js"></script>
+
+    </body>
+</html>

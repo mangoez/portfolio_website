@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Po's Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">What I can do</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">Projects, Qualifications & Experiences</a></li>
+                    <li class="nav__item"><a href="index.html#progress" class="nav__link">Current progress</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                Bionics Institute <strong>Internship</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Supervised by Alex Thompson</p>
+            <img src="img/bionics_institute.png" alt="" class="intro__img">
+        </section>
+
+        <div class="portfolio-item-individual">
+            <p>During my first year at university I had the honor to complete an internship at the
+               Bionics Institute under Alex Thompson!</p>
+            <p>I was at a biomedical techonology showcase. Long story short, I was plopped down in
+               front of the Research Director Professor James Fallon and told "Well go on, pitch yourself!"</p>
+            <p>MIT Professor, Tim Dennison had inspired that day and I guess you miss 100% of the chances you don't take?</p>
+            <p>Thank you Alex for giving this green newbie a shot, it was an amazing experience to learn
+               first hand from a person in the field and you are a huge part of why I am interested in biomeical engineering today.</p>
+        </div>
+
+
+        <!-- Skills acquired -->
+        <section class="my-services" id="services">
+            <h2 class="section__title section__title--services">Skills Acquired</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Soldering techniques</h3>
+                    <p>Through hole soldering</p>
+                    <p>Surface mount soldering</p>
+                </div>
+
+                <div class="service">
+                    <h3>Fine hands on skills - PCB assembly</h3>
+                    <p>Assembled detailed and complex circuits using tweezers and a microscope!</p>
+                </div>
+
+                <div class="service">
+                    <h3>PCB design - KiCAD</h3>
+                    <p>Designed custom circuits for rapid prototyping</p>
+                    <p>Designed custom footprints from scratch</p>
+                </div>
+
+                <div class="service">
+                    <h3>CAD design</h3>
+                    <p>Used Fusion360 to model custom parts</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- NiMH battery charger -->
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Some stuff I did~</h2>
+           <p class="section__subtitle section__subtitle--about">NiMH battery charger</p>
+
+           <div class="about-me__body">
+               <p>"Hi Po, I would like a battery charger", naive me thought this would be
+                   easy... safe to say it was quite interesting.</p>
+                   <p>This was my first KiCAD project and it involed designing a custom footprint
+                      and required me to learn about stuff like current smoothing, how  different
+                      batteries charge, voltage dividers and how you could wire it in a special
+                      way to turn it into a constant current regulator.</p>
+           </div>
+
+           <img src="img/battery.png" alt="Battery icon" class="about-me__img">
+           <img src="img/bionics_01.jpg" alt="KiCAD example">
+        </section>
+
+
+        <!-- About me -->
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Some stuff I did~</h2>
+           <p class="section__subtitle section__subtitle--about">Detailed PCB assembly</p>
+
+           <div class="about-me__body">
+               <p>This was my first project, assemble a signal processing unit with surface
+                  mount and through hole components.</p>
+               <p>It was a great project because it taught me patience, consistency and NOT to
+                  sneeze when doing something like this. I made multiple units of these
+                  and it was very satisfying looking at finished product.</p>
+           </div>
+
+           <img src="img/circuit.png" alt="Battery icon" class="about-me__img">
+           <img src="img/bionics_03.jpg" alt="KiCAD example">
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:liupochen@gmail.com" class="footer__link">liupochen@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/po-liu-science-slave/" target="black">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+
+        <script src="js/index.js"></script>
+
+    </body>
+</html>

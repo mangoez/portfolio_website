@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Po's Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">What I can do</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">Projects, Qualifications & Experiences</a></li>
+                    <li class="nav__item"><a href="index.html#progress" class="nav__link">Current progress</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                SuperHack <strong>Mentoring</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Unimelb - MUEEC event</p>
+            <img src="img/superhack.png" alt="" class="intro__img">
+        </section>
+
+        <div class="portfolio-item-individual">
+            <p>SuperHack is an annual high-school engineering hackathon for young women hosted
+                by the Melbourne University Electrical Engineering Club, MUEEC.</p>
+
+            <p>Every year, girls are invited from schools across Victoria to compete
+               in teams to solve engineering design challenges based on a real industry problem.
+               The goal? This years teams were to use their creativity in building and designing an autonomous
+               robot in 2 days from scratch for Melon Usk. (Lol)</p>
+
+
+            <p>Being an engineer is all about creative invention and problem-solving.
+               However, oftentimes we can feel discouraged from engineering due to its
+               reputation of being too abstract or gendered.</p>
+
+            <p>This is my way of passing it forward, from all the people that have helped me get
+               to where I am.</p>
+            <p>I now present to you............. Poedicia!</p>
+        </div>
+
+
+        <!-- NiMH battery charger -->
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Poedicia <3</h2>
+           <p class="section__subtitle section__subtitle--about">The myth....the legend.....</p>
+
+           <div class="about-me__body">
+               <p>This bad boy was an arduino based rover with a 2 DV motors
+                   that could follow a black line using differential steering
+                  while using an RBG sensor
+                  to sort out the objects in front of it, pushing it to the left for green
+                  and the right for orange.</p>
+               <p></p>
+               <p>The idea was that this could be some sort of portable package sorting
+                  system in a factory.</p>
+           </div>
+
+           <img src="img/lightning.png" alt="lightning icon" class="about-me__img">
+           <img src="img/superhack_02.jpeg" alt="Poedicia">
+
+        </section>
+
+
+        <!-- About me -->
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">My team!</h2>
+           <p class="section__subtitle section__subtitle--about">Suzanne Cory Highschool</p>
+
+           <div class="about-me__body">
+               <p>They were amazing kids!</p>
+               <p>A bit phased at first having to learn electrical circuitry, C/C++ and
+                  a bit of physics all in one go but the fact they made it made me so proud! *sniff*</p>
+               <p>I can only hope I inspired someone to not give up on STEM.</p>
+           </div>
+
+           <img src="img/team.png" alt="team icon" class="about-me__img">
+           <img src="img/superhack_03.jpeg" alt="my team">
+        </section>
+
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:liupochen@gmail.com" class="footer__link">liupochen@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/po-liu-science-slave/" target="black">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+
+        <script src="js/index.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+
+    <!--1--------------------------------->
+    <div class="swiper-slide">
+    <!--main-section--------------------------->
+        <section class="slider-box">
+            <!--top------------------------>
+            <div class="top-section">
+                <!--name------------------------------------>
+                <div class="name">
+                    <h1>I'm Thanushi</h1>
+                    <!--category---------->
+                    <p>Freelancing Graphic Designer</p>
+                </div>
+
+                <!--details------------------------------->
+                <div class="details">
+                    <p>Hi my name is Thanushi</p>
+                    <p>And I like horses</p>
+                </div>
+                <!--model--------------------------->
+                <a href="#" class="model"><img src="images/cut 1.png"/></a>
+            </div>
+
+            <!--bottom------------------------>
+            <div class="bottom-section">
+                <!--left-side---------------------------->
+                <div class="left-side">
+                <!--linked----------------->
+                    <div class="linked">
+                        <h1>LinkedIn</h1>
+                        <p>5K</p>
+                    </div>
+                    <!--Emoji----------------->
+                    <div class="Emoji">
+                        <h1>Emoji</h1>
+                        <p>4K</p>
+                   </div>
+                </div>
+            </div>
+        </section>
+    </div>
