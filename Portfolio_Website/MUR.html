@@ -38,17 +38,67 @@
 
         <section class="intro">
             <h1 class="section__title section__title--intro">
-                Suspension Data Aquisition <strong>MUR</strong>
+                My Junior Projects 2020 <strong>MUR</strong>
             </h1>
-            <p class="section__subtitle section__subtitle--intro">Make it work but make it cheap lol</p>
+            <p class="section__subtitle section__subtitle--intro">Hey Po, do this plz? Just make it work</p>
             <img src="img/MUR.png" alt="" class="intro__img">
         </section>
 
         <div class="portfolio-item-individual">
-            <p>As part of the sensors team for MUR, I need to design a data acquisition system for the
+            <p>During the first semester of 2020 I was Mechatronics Juniour in the sensors team for MUR,
+               I needed to design a data acquisition system for the
                suspensiton to help quantify the behaviour of the vehicle.</p>
-            <p>Photos and CAD to come through in the future!</p>
+            <p>In the second semester I joined as the Autonomous Systems Junior to work on their
+               autonomous car in a gazebo simulation</p>
+
         </div>
+
+
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Prototype</h2>
+           <p class="section__subtitle section__subtitle--about">Design concept for the mount</p>
+
+           <div class="about-me__body">
+               <p>Now there is a lot to consider when you need to attach something
+                  to a racecare that aren't so obvious:</p>
+               <ul>
+                   <li>Vibrations of the vehicle</li>
+                   <li>How the attachment is installed</li>
+                   <li>How the attachment is removed</li>
+                   <li>Will the attachment be able to withstand workshop garage 'oops I dropped my wrench' treatment?</li>
+                   <li>Will the vibrations of the car affect the quality of the signal in the sensor?</li>
+               </ul>
+
+               <p>So long story short, I needed a design that will:</p>
+               <ul>
+                   <li>Not be vibrated off the car or undo itself - be as minimal as possible in terms of the amount of parts</li>
+                   <li>Shelter the sensor such that it will be protected from dropped wrenches, but also have a way
+                       for it to be mounted easily</li>
+                   <li>Have an accurate enough resolution to give a position based on the very fine angle of rotation</li>
+                   <li>Have a low hysteresis - the sensor will produce the same results after say one year since it will be mounted
+                       very securely/rather permanently</li>
+                   <li>Good linearity for consistent results across a range</li>
+                   <br><br>
+               </ul>
+
+               <p>So after some kerfuffle if you will I present you this!</p>
+
+               <img src="img/MUR/mount_front.png" alt="the front mount" class="about-me__img">
+               <img src="img/MUR/mount_back.png" alt="the back mount" class="about-me__img">
+
+               <p>There are a few things to note about this design </p>
+               <ul>
+                   <li>The mount is designed to slot into the chassis grooves to help create extra stability and prevent any wiggling</li>
+                   <li>The entire design can be 3D printed with ABS/PLA plastic, these are a lightweight and durable materials
+                       and aren't heavy on manufacturing to ease the iteration phase</li>
+                   <li>There is a rod attached to the stem of a rotatory potentiometer that will rotate while the sensor
+                       is fixed to the chassis</li>
+                   <li>It can measure up to 20cm in displacement from the suspension </li>
+               </ul>
+           </div>
+
+           <img src="img/BCI/transparent.png" class="transparent">
+        </section>
 
 
 

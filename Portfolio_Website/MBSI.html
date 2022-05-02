@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Po's Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">What I can do</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">Projects, Qualifications & Experiences</a></li>
+                    <li class="nav__item"><a href="index.html#progress" class="nav__link">Current progress</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                Brain Computer Interface Project <strong>MBSI</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">Brain</p>
+            <img src="img/mbsi/bci logo.png" alt="" class="intro__img">
+        </section>
+
+        <section class="about-me" id="about">
+            <div class="about-me__body">
+                <p>So I had the opportunity to co-found a club call the <a href="https://www.mbsi.org.au/">Melbourne Bioinnovation Student Initiative (MBSI)</a></p>
+                <p>We are a group of undergraduate, postgraduate and medical students with backgrounds across science, engineering and medicine.
+                    We share an interest in technology and its applications in medicine and the biological sciences.</p>
+                <p>Our aim is to help students and other young people explore this space by providing opportunities for multidisciplinary collaboration and learning.</p>
+                <br></br>
+                <p>After the hard work I put in with Dr Sam John working on a BCI project, I thought why not start a team and build bigger things?</p>
+                <p>Since by starting the project it would serve to target some key things I'm passionate about:</p>
+                <ol>
+                    <li>Build cool things: applying theory to real life projects</li>
+                    <li>Make BCI more accessible to the general cohort: it's researchy and hard to get into</li>
+                    <li>Get medical students and science students to work together</li>
+                    <li>Create opportunities for students to get their hards dirty</li>
+                    <li>Raise awareness of BCI and the users of BCI that would need this technology</li>
+                </ol>
+            </div>
+        </section>
+
+
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Wheelchair team</h2>
+           <p class="section__subtitle section__subtitle--about">Steven Hawking, we gotchu fam</p>
+
+           <div class="about-me__body">
+               <h3>Problem statement</h3>
+               <p>Traditional BCI wheelchairs have a few problems:</p>
+               <ol>
+                   <li>They rely on gaze to determine where to go: this means they can't really look at where they are going despite having
+                       very high decoding accuracy and being great practically</li>
+                   <li>Use expensive equipment in order to perform hardcore decoding</li>
+                   <li>Give too much power to the BCI which makes the mental effort to control the wheelchair difficult</li>
+                   <li>Often cannot move very far easily and requires consistent mental effort to get anywhere</li>
+                   <li>Additionally, many have not considered a safety mechanism incase the BCI system gets it wrong!</li>
+               </ol>
+           </div>
+
+           <div class="about-me__body">
+               <h3>Preposed system</h3>
+               <p>We will be adopting the way-pointing system that ships use. This is done by travelling to a point determined by the user and the directions are generated autonomously
+               as opposed to how you would drive a car which is deciding on each individual direction to get to a point</p>
+               <ol>
+                   <li>We will use gaze tracking to determine where to go in 3D space as opposed to a predetermined direction. This allows them to actually see where they are going
+                       but also let them use their eyes after the location is determined</li>
+                   <li>The G.tec Unicorn Hybrid Black will be used which is one of the best portable EEGs and costs around $1400 AUD which is much better than most</li>
+                   <li>The location will be determined by the eyes, the intent to start movement is decided with the BCI. This takes away directional control from the BCI
+                       and instead is used in a more natural start-stop way</li>
+                   <li>By using the eyes to determine where to go in 3D space we can move much further with less mental effort</li>
+                   <li>By using Error Related Potentials (ErrP), we can detect when the user has realised a mistake in our system and stop the wheelchair from moving!</li>
+               </ol>
+               <p>To summarise:</p>
+               <img src="img/mbsi/control.png" alt="" class="intro__img">
+               <p>For more information about motor imagery, check out my personal BCI project <a href="BCI.html">here</a></p>
+
+               <br>
+               <br>
+               <h3>BCI decoding pipeline</h3>
+               <p>All specifications are determined from the literature</p>
+               <img src="img/mbsi/wheelchair bci pipeline.png" alt="" class="intro__img">
+
+               <br>
+               <br>
+               <h3>Gaze tracking</h3>
+               <p>We are using MediaPipe Iris solution, a model developed by CSAIL at MIT which works really well. </p>
+           </div>
+           <img src="img/BCI/transparent.png" class="transparent">
+        </section>
+
+
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">P300 speller team</h2>
+           <p class="section__subtitle section__subtitle--about">|</p>
+
+           <div class="about-me__body">
+               <h3>Problem statement</h3>
+               <p>There is no problem statement, the focus of this was to create a communication device for the BCI wheelchair that would benefit from the EEG system
+                  and also be modular to perform typing or turn on the lights in the house for example.</p>
+               <p>The P300 is a signal that arises out of surprise; something that you did not expect occured. If you were staring at a letter and the letter happened
+                  to light it, it would cause a P300 to occur. Now imagine that we flash the rows and columns, at some point your letter will have flashed twice because in a grid of letters
+                  it holds a place in a row and column</p>
+               <p>When we detect two P300 signals then we know what letter you were looking at because we know when each row and column would have flashed.</p>
+               <p>Here is a video to illustrate the process</p>
+               <iframe
+                   width="1237"
+                   height="696"
+                   src="https://www.youtube.com/embed/XIr2cRKFolY"
+                   title="YouTube video player"
+                   frameborder="0"
+                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                   allowfullscreen>
+               </iframe>
+               <br></br>
+               <br></br>
+               <h3>Offline decoding pipeline and results</h3>
+               <p>Based off the existing literature we have designed this pipeline:</p>
+               <img src="img/mbsi/p300 pipeline.png" alt="" class="intro__img">
+               <p>We are using <a href="https://www.kaggle.com/datasets/rramele/p300samplingdataset">this dataset from kaggle. We have also published our pipeline here!</a></p>
+               <p>Below are some the results for decoding all the individual P300 flashes, the main takeaway is that performance is definitely different between subjects.</p>
+               <img src="img/mbsi/classifier results.png" alt="" class="intro__img">
+               <p>So the maximum accuracy is about 78% here, this is not so bad because we can repeat the trial many times for the same letter.
+                  All the subject has to do is stare for a bit longer. This means than with 10 repeats we can actually get 100% letter accuracy!</p>
+               <p>Below is a graph showing the number of letter repeats very the accuracy of the letter decoding</p>
+               <img src="img/mbsi/repetition results.png" alt="" class="intro__img">
+               <p>So to summarise, we can definitely show that P300 spelling is possible. But also accuracy is subject dependent and that it's also possible to speed up the letter decoding
+                  by reducing the number of repetitions.</p>
+           </div>
+
+           <img src="img/BCI/transparent.png" class="transparent">
+        </section>
+
+
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:liupochen@gmail.com" class="footer__link">liupochen@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/po-liu-science-slave/" target="black">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+
+        <script src="js/index.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Po's Portfolio Website</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+        <link rel='shortcut icon' href='img/favicon.ico' type='image/x-icon' />
+
+        <!-- Update these with your own fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                    <img src="img/logo.png" alt="">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html#home" class="nav__link">Home</a></li>
+                    <li class="nav__item"><a href="index.html#about" class="nav__link">About me</a></li>
+                    <li class="nav__item"><a href="index.html#services" class="nav__link">What I can do</a></li>
+                    <li class="nav__item"><a href="index.html#work" class="nav__link">Projects, Qualifications & Experiences</a></li>
+                    <li class="nav__item"><a href="index.html#progress" class="nav__link">Current progress</a></li>
+                </ul>
+            </nav>
+        </header>
+
+
+        <section class="intro">
+            <h1 class="section__title section__title--intro">
+                3DOF Robot Arm <strong>MUEEC</strong>
+            </h1>
+            <p class="section__subtitle section__subtitle--intro">T100 wannabe</p>
+            <img src="img/MUEEC.png" alt="" class="intro__img">
+        </section>
+
+        <div class="portfolio-item-individual">
+            <iframe
+                width="1190"
+                height="669"
+                src="https://www.youtube.com/embed/M2u_6rnJurY"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+            <p>My role in the Melbourne University Electrical Engineering Club is as the Autonomous Robotics Research Project (ARRP) officer.
+               Our goal at ARRP is to provide fun, educational and awesome projects for students to build who may be beginners or experts.</p>
+            <p>This is because the University of Melbourne has a very theoretically head strong engineering degree, other than one subject, there is no
+               real opportunity to build cool things. </p>
+            <p>This robotic arm project has all the boring logistics done such as ordering the parts, making sure the screws are correct and such, so
+               the student only needs to focus on the control/programming aspect!</p>
+            <p>It serves to be an cheap & simple introduction to robotics so that students aren't discouraged, once completed the robot arm can
+               have an array of interesting additions added on such as cameras, various graspers etc. etc.</p>
+            <ul>
+               <li>It moves like someone diagnosed with end stage parkinsons</li>
+               <li>Can only lift about 200gms</li>
+               <li>Very cute</li>
+               <li>Good for beginners who don't want to deal with rotation matrices</li>
+           </ul>
+            <p>The lovely MUEEC commitee has created an absolute 🔥 of a video to promote the robot arm</p>
+            <p>Next step for us is to make lots of these bad bois and try get suckers to buy them</p>
+
+        </div>
+
+
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">How it works</h2>
+           <p class="section__subtitle section__subtitle--about">|</p>
+
+           <div class="about-me__body">
+               <p>Below shows you how the robotic system will work:</p>
+               <img src="img/Robot arm/robot_control_flowcart.png" alt="" class="intro__img">
+
+               <p>Using the arduino, we have the nunchuck send in the 3D coordinates (x,y,z), this will be converted into motor angles via some
+               inverse kinematics calculations and the motors will then move in order to position the end of the arm at that point in space.</p>
+
+               <p>The inverse kinematics are calculated using trigonometry!
+
+                  The paper <a href="https://www.researchgate.net/publication/328583527_A_Geometric_Approach_to_Inverse_Kinematics_of_a_3_DOF_Robotic_Arm">here</a> details the derivation.</p>
+           </div>
+
+           <img src="img/BCI/transparent.png" class="transparent">
+        </section>
+
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Structure</h2>
+           <p class="section__subtitle section__subtitle--about">Look at this beast 😂</p>
+
+           <div class="about-me__body">
+               <p>The robot is designed and simulated in Fusion360 and then later 3D printed with my Ender3 printer.
+                  In Fusion360 we were fully able to test the range that the robot arm can move in by making the connections specific joints.</p>
+               <p>A big part of the design was to make it modular so that you can easily add/take off arms as well as being cheap and easy to fix.</p>
+               <img src="img/Robot arm/CAD.png" alt="" class="intro__img">
+           </div>
+
+           <img src="img/BCI/transparent.png" class="transparent">
+        </section>
+
+        <section class="about-me" id="about">
+           <h2 class="section__title section__title--about">Electronics</h2>
+           <p class="section__subtitle section__subtitle--about">|</p>
+
+           <div class="about-me__body">
+               <p>To power the all the servos as well as the Arduino we made a custom PCB board that can be powered by a 5V phone charge / battery pack.
+                  You could choose to either power both the Arduino and the motors with the wall socket or just power the motors and have the Arduino connected
+                  to your laptop for code testing.</p>
+               <img src="img/Robot arm/pcb.png" alt="" class="intro__img">
+               <p>This works by simply mounting the Arduino, servo motors and nunchuck to the PCB~</p>
+               <p>Another feature of this robot is how we hacked a Wii remote, logically, for us the Wii remote was the most intuitive option to control a robotic arm
+                  since it has two buttons and a joystick. They are are rediculously cheap from Alibaba.</p>
+               <p>They are very easy to hack, all you need are the Arduino libraries some smart people have created 😂</p>
+           </div>
+
+           <img src="img/BCI/transparent.png" class="transparent">
+        </section>
+
+
+
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <!-- replace with your own email address -->
+            <a href="mailto:liupochen@gmail.com" class="footer__link">liupochen@gmail.com</a>
+            <ul class="social-list">
+                <li class="social-list__item">
+                    <a class="social-list__link" href="https://www.linkedin.com/in/po-liu-science-slave/" target="black">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+
+        <script src="js/index.js"></script>
+
+    </body>
+</html>
